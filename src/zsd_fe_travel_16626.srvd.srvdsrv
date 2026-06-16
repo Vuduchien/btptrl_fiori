@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service_Definition_for_Travel_Entity'
+define service ZSD_FE_TRAVEL_16626 {
+  expose ZC_FE_TRAVEL_16626 as Travel_16626;
+}

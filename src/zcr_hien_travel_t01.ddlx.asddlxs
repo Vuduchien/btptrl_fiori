@@ -1,0 +1,29 @@
+@Metadata.layer: #CORE
+
+//Header
+@UI.headerInfo: {
+        typeName: 'Travel',
+        typeNamePlural: 'Travel Details',
+        title: {
+            type: #STANDARD,
+            value: 'Description'
+        },
+        description: {
+            value: 'TravelId'
+        },
+        typeImageUrl: 'sap-icon://travel-expense'
+    }
+
+annotate entity ZC_FE_TRAVEL_16626 with
+{
+  // Start 1st Page \\
+  // UI Line Items First Page - Travel Details
+  @EndUserText.label: 'Travel ID'
+  TravelId;
+
+
+  @UI.lineItem: [{ position: 80 }]
+  @UI.fieldGroup: [{ position: 30, qualifier: '#TravelInfomations' }]
+  Description;
+
+}

@@ -1,0 +1,15 @@
+@Metadata.layer: #CORE
+
+//Thanh tìm kiếm ở SAP Fiori app
+@Search.searchable: true
+
+annotate entity ZC_FE_TRAVEL_16626 with
+{
+  // Start 1st Page \\
+  // UI Line Items First Page - Travel Details
+  @UI.lineItem: [{ position: 10 }]
+  @Search.defaultSearchElement: true
+  @Search.fuzzinessThreshold: 0.5
+  TravelId;
+
+}

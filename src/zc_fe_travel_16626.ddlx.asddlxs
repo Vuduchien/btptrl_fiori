@@ -1,0 +1,54 @@
+@Metadata.layer: #CORE
+@UI: {
+    presentationVariant: [{
+        visualizations: [{
+            type: #AS_LINEITEM
+         }]
+    }]
+}
+@Search.searchable: true
+annotate view ZC_FE_TRAVEL_16626 with
+{
+  @UI.lineItem: [{ position: 20 }]
+  @Search.defaultSearchElement: true
+  @UI.selectionField: [{ position: 20 }]
+  @Consumption.valueHelpDefinition: [{ entity.element: 'AgencyID', entity.name: '/DMO/I_AGENCY_STDVH' }]
+  @Consumption.filter.defaultValue: '70041'
+  AgencyId;
+
+  @UI.lineItem: [{ position: 30 }]
+  @Search.defaultSearchElement: true
+  @Consumption.valueHelpDefinition: [
+  { entity.element: 'CustomerID', entity.name: 'ZIR_DM09_TRAVEL_AGENCY_VH',
+    additionalBinding: [{element: 'TravelID', localElement: 'TravelId', usage: #FILTER_AND_RESULT }]
+   }]
+  @UI.selectionField: [{ position: 30 }]
+  @Consumption.filter.multipleSelections: false
+  CustomerId;
+
+  @UI.lineItem: [{ position: 40 }]
+  @Search.defaultSearchElement: true
+  @UI.selectionField: [{ position: 40 }]
+  BeginDate;
+
+  @UI.lineItem: [{ position: 50 }]
+  @Search.defaultSearchElement: true
+  @UI.selectionField: [{ position: 50 }]
+  EndDate;
+  
+  @UI.lineItem: [{ position: 80 }]
+  @UI.textArrangement: #TEXT_ONLY
+  TotalPrice;
+
+  @UI.lineItem: [{ position: 60 }]
+  Description;
+
+  @UI.selectionField: [{ position: 70 }]
+  @UI.lineItem: [{ position: 70, label: 'Processing Status', criticality: 'OverallStatus', criticalityRepresentation: #WITH_ICON }]
+  @UI.textArrangement: #TEXT_ONLY
+  @Search.defaultSearchElement: true
+  @Consumption.valueHelpDefinition: [{ entity.element: 'TravelStatus', entity.name: '/DMO/I_Travel_Status_VH' }]
+  @UI.dataPoint: { qualifier: 'TravelStatus', title: 'Status'}
+  Status;
+  
+}
